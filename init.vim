@@ -30,6 +30,11 @@ Plug 'mhinz/vim-startify'
 
 " Initialize plugin system
 call plug#end()
+
+" Load plugin config
+source ~/.config/nvim/plug-config/start-screen.vim
+
+
 colorscheme gruvbox
 let python_highlight_all=1
 let g:airline_powerline_fonts = 1
