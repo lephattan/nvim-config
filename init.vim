@@ -18,6 +18,7 @@ Plug 'cloudhead/neovim-fuzzy'
 Plug 'nvie/vim-flake8'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
+Plug 'powerline/powerline'
 Plug 'vim-airline/vim-airline'
 Plug 'prettier/vim-prettier', {
 \ 'do': 'yarn install',
@@ -27,6 +28,8 @@ Plug 'preservim/nerdcommenter'
 "Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mhinz/vim-startify'
+Plug 'tpope/vim-fugitive'
+Plug 'mte90/deoplete-wp-hooks', { 'do': './install.sh' }
 
 " Initialize plugin system
 call plug#end()
@@ -50,6 +53,7 @@ nnoremap <leader>w :w<CR>
 nnoremap <leader>vs :vs<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <c-h> :%s///g<left><left><left>
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 " leader t for termainal with height of 8
 nnoremap <leader>t :8split +terminal<cr>
 tnoremap <Esc> <C-\><C-n>
