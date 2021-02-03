@@ -8,6 +8,7 @@ set splitbelow
 set background=dark
 let mapleader=" "
 let g:python3_host_prog = expand("~/.envs/nvim/bin/python3")
+set cursorline
 
 " Specify a directory for plugins
 call plug#begin('~/.vim/plugged')
@@ -69,6 +70,9 @@ nnoremap <C-p> :CocCommand<CR>
 " CocSnippets
 " Use <C-l> for trigger snippet expand.
 imap <C-l> <Plug>(coc-snippets-expand)
+" CocFileExplorer
+nnoremap <leader>b :CocCommand explorer<CR>
+nnoremap <leader>f :CocCommand explorer --preset floating<CR>
 
 " Use <C-j> for select text for visual placeholder of snippet.
 vmap <C-j> <Plug>(coc-snippets-select)
