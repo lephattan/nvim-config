@@ -61,6 +61,10 @@ tnoremap <Esc> <C-\><C-n>
 autocmd BufEnter term://* startinsert
 autocmd BufLeave term://* stopinsert
 autocmd TermOpen * startinsert
+" Resize shortcuts
+nnoremap <silent> <leader>5 :exe "vertical resize ".&columns*1/2<cr>
+nnoremap <silent> <leader>7 :exe "vertical resize ".&columns*7/10<cr>
+nnoremap <silent> <leader>3 :exe "vertical resize ".&columns*3/10<cr>
 " vim-fugitive for git
 nmap <leader>gs :G<CR>
 nmap <leader>gh :diffget //3<CR>
