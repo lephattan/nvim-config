@@ -14,8 +14,6 @@ set cursorline
 call plug#begin('~/.vim/plugged')
 
 Plug 'cloudhead/neovim-fuzzy'
-"Plug 'vim-scripts/indentpython.vim'
-"Plug 'vim-python/python-syntax'
 Plug 'nvie/vim-flake8'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
@@ -26,7 +24,6 @@ Plug 'prettier/vim-prettier', {
 \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug 'Raimondi/delimitMate'
 Plug 'preservim/nerdcommenter'
-"Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-fugitive'
@@ -44,6 +41,13 @@ let python_highlight_all=1
 let g:airline_powerline_fonts = 1
 
 "" My shortcuts
+" Move lines up and down
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 " Ctrl p for fuzzy search
 let g:ycm_confirm_extra_conf = 0
 set completeopt-=preview
@@ -62,9 +66,11 @@ autocmd BufEnter term://* startinsert
 autocmd BufLeave term://* stopinsert
 autocmd TermOpen * startinsert
 " Resize shortcuts
+nnoremap <silent> <leader>1 :exe "vertical resize ".&columns*1/10<cr>
+nnoremap <silent> <leader>2 :exe "vertical resize ".&columns*1/5<cr>
 nnoremap <silent> <leader>5 :exe "vertical resize ".&columns*1/2<cr>
-nnoremap <silent> <leader>7 :exe "vertical resize ".&columns*7/10<cr>
 nnoremap <silent> <leader>3 :exe "vertical resize ".&columns*3/10<cr>
+nnoremap <silent> <leader>7 :exe "vertical resize ".&columns*7/10<cr>
 " vim-fugitive for git
 nmap <leader>gs :G<CR>
 nmap <leader>gh :diffget //3<CR>
@@ -102,11 +108,6 @@ au BufNewFile,BufRead *.py
 						\ set autoindent
 						\ set fileformat=unix
 
-"" Python Run and Debug with pudb shortcuts
-autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python' shellescape(@%, 1)<CR>
-autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python' shellescape(@%, 1)<CR>
-autocmd FileType python map <buffer> <F10> :w<CR>:exec '!pudb' shellescape(@%, 1)<CR>
-autocmd FileType python imap <buffer> <F10> <esc>:w<CR>:exec '!pudb' shellescape(@%, 1)<CR>
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -117,3 +118,5 @@ inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
+autocmd FileType vue setlocal ts=4 sw=4 sts=0 expandtab
+autocmd FileType html setlocal ts=2 sw=2 expandtab
