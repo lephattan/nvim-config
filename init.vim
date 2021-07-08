@@ -25,15 +25,11 @@ Plug 'prettier/vim-prettier', {
 Plug 'Raimondi/delimitMate'
 Plug 'preservim/nerdcommenter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-fugitive'
-Plug 'mte90/deoplete-wp-hooks', { 'do': './install.sh' }
+Plug 'tpope/vim-liquid'
 
 " Initialize plugin system
 call plug#end()
-
-" Load plugin config
-source ~/.config/nvim/plug-config/start-screen.vim
 
 
 colorscheme gruvbox
@@ -120,3 +116,9 @@ inoremap <silent><expr> <Tab>
       \ coc#refresh()
 autocmd FileType vue setlocal ts=4 sw=4 sts=0 expandtab
 autocmd FileType html setlocal ts=2 sw=2 expandtab
+autocmd FileType php setlocal ts=2 sw=2 expandtab
+autocmd FileType json setlocal ts=2 sw=2 expandtab
+autocmd FileType MD, md setlocal ts=2 sw=2 expandtab
+autocmd FileType liquid setlocal ts=2 sw=2 expandtab
+autocmd FileType javascript setlocal ts=2 sw=2 expandtab
+autocmd FileType yaml setlocal ts=2 sw=2 expandtab
