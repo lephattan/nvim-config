@@ -1,19 +1,24 @@
 {
-	"coc.preferences.formatOnSaveFiletypes": [
-		"css",
-		"markdown",
-		"javascript",
-		"graphql",
-		"html",
-		"yaml",
-		"json",
-		"python"
-	],
-	"python.linting.enabled": true,
-	"python.linting.pylintEnabled": true,
-	"python.jediEnabled": false,
-	"snippets.ultisnips.directories": [
-		"UltiSnips",
-		"~/.config/nvim/utils/snips"
-	]
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "markdown",
+    "javascript",
+    "graphql",
+    "html",
+    "yaml",
+    "json",
+    "python"
+  ],
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "snippets.ultisnips.directories": [
+    "UltiSnips",
+    "~/.config/nvim/utils/snips"
+  ],
+  "intelephense.environment.includePaths": [
+    "/home/tanle/.config/nvim/utils/php-stubs/woocommerce-stubs"
+  ],
+  "intelephense.stubs": [
+    "wordpress"
+  ]
 }
